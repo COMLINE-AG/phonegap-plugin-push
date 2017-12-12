@@ -55,7 +55,7 @@ declare namespace PhonegapPluginPush {
 		 * @param topics
 		 */
 		unregister(successHandler: () => any, errorHandler?: () => any, topics?: string[]): void
-        
+
 		/**
 		 * The subscribe method is used when the application wants to subscribe a new topic to receive push notifications.
 		 * @param topic Topic to subscribe to.
@@ -65,14 +65,14 @@ declare namespace PhonegapPluginPush {
 		subscribe(topic: string, successHandler: () => any, errorHandler: () => any): void;
 
 		/**
-		 * The unsubscribe method is used when the application no longer wants to receive push notifications 
+		 * The unsubscribe method is used when the application no longer wants to receive push notifications
 		 * from a specific topic but continue to receive other push messages.
 		 * @param topic Topic to unsubscribe from.
 		 * @param successHandler Is called when the api successfully unregisters.
 		 * @param errorHandler Is called when the api encounters an error while unregistering.
 		 */
 		unsubscribe(topic: string, successHandler: () => any, errorHandler: () => any): void;
-        
+
 		/*TODO according to js source code, "errorHandler" is optional, but is "count" also optional? I can't read objetive-C code (can anyone at all? I wonder...)*/
 		/**
 		 * Set the badge count visible when the app is not running
@@ -85,7 +85,7 @@ declare namespace PhonegapPluginPush {
 		 * @param count
 		 */
 		setApplicationIconBadgeNumber(successHandler: () => any, errorHandler: () => any, count: number): void
-        
+
 		/**
 		 * Get the current badge count visible when the app is not running
 		 * successHandler gets called with an integer which is the current badge count
@@ -134,6 +134,10 @@ declare namespace PhonegapPluginPush {
 			 * If true the device vibrates on receipt of notification. Default is true.
 			 */
 			vibrate?: boolean
+            /**
+             * If true the badge will be cleared on app startup. Default is false
+             */
+            clearBadge?: boolean
 			/**
 			 * If true the app clears all pending notifications when it is closed. Default is true.
 			 */
